@@ -9,7 +9,7 @@
 
 ## 워드클라우드
 [WordCloud.py](https://github.com/pmjuu/Real-life_DataAnalysis/blob/main/%EC%B9%B4%ED%86%A1%EB%8C%80%ED%99%94%20%EB%B6%84%EC%84%9D/%EC%B9%B4%ED%86%A1%EB%8C%80%ED%99%94%20WordCloud.py)
-### <wordcloud 패키지 설치하기>   
+### wordcloud 패키지 설치하기   
 `pip install -r requirements.txt`<br>   
 
 ### 오류일지   
