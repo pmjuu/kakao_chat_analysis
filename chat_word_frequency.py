@@ -26,7 +26,7 @@ with open(os.path.join(CHAT_DATA_DIR, "test.txt"), "r", encoding="utf-8") as f:
         m = re.match('\d+. \d+. \d+.', line)
         if not m:
             # lines[n-1] = ' '.join(lines[(n-1):n]) #왜 안 되지??
-            lines[lines.index(line) - 1] += (' '+line)  # 이전 요소에 현재 line 합치고
+            lines[lines.index(line) - 1] += (' '+line)  # 이전 line에 현재 line 합치고
             lines.remove(line) #현재 line 삭제
 
     print(lines)
