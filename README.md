@@ -1,6 +1,6 @@
 # 카톡대화 분석
 ## 단어 빈도 구하기
-[단어 빈도 구하기ver1.py](https://github.com/pmjuu/Real-life_DataAnalysis/blob/main/%EC%B9%B4%ED%86%A1%EB%8C%80%ED%99%94%20%EB%B6%84%EC%84%9D/%EC%B9%B4%ED%86%A1%EB%8C%80%ED%99%94%20%EB%8B%A8%EC%96%B4%20%EB%B9%88%EB%8F%84%20%EA%B5%AC%ED%95%98%EA%B8%B0ver1.py)   
+[단어 빈도 구하기ver1.py](./chat_word_frequency.py)  
 ### 후기
 * ~~특히 이모티콘이 포함된 경우, 사용자 이름을 입력하는게 번거로웠다. 사용자 이름을 자동으로 입력받도록 만들어야겠다.~~
 * 데이터 정제가 필요함. 이름 뒤에 오는 문장 속에서 단어 빈도를 구하도록 바꿔야겠다. (ver1은 날짜부터 시작해서 한 문장 안에서 단어 포함 여부를 판단함)
