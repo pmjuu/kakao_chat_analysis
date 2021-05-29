@@ -26,8 +26,6 @@ with open(os.path.join(CHAT_DATA_DIR, "test.txt"), "r", encoding="utf-8") as f:
             n = lines.index(line)
             lines[n-1] += (' '+line)  #이전 line에 현재 line 합치고
             lines.remove(line) #현재 line 삭제
-        else:
-            pass
 
     print(lines)
     with open(os.path.join(CHAT_DATA_DIR, "test_data_refine.txt"), "w", encoding="utf-8") as fw: #정제된 데이터txt파일
