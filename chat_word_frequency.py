@@ -32,7 +32,7 @@ with open(os.path.join(CHAT_DATA_DIR, "test.txt"), "r", encoding="utf-8") as f:
         for line in lines:
             fw.write(line+'\n')
 
-    names = sorted({line[(line.find(',')+2):(line.find(' :'))] for line in lines if ', ' in line and ' : ' in line}) #', '~' :' 사이에 있는 사용자 이름 모으기. set으로 중복제거하고 정렬된 리스트로 변환
+    names = sorted({line[(line.find(',')+2):(line.find(' :'))] for line in lines if ', ' in line and ' : ' in line}) #', '과 ' :' 사이에 있는 사용자 이름 모으기. set으로 중복제거하고 정렬된 리스트로 변환
     sentencesList = [[line for line in lines if ', '+name+' : ' in line] for name in names] #사용자 별로 문장 분류. ex)첫번째 요소는 사용자1의 문장들
 
     for sentences in sentencesList: #사용자1 문장들 부터 분석 시작
