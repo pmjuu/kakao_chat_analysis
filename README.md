@@ -1,11 +1,13 @@
 # 카톡대화 분석
 모바일 카카오톡에서 텍스트 내보내기한 txt파일을 바탕으로 내용 분석하기
+<br>
 ## 단어 빈도 구하기
 [단어 빈도 구하기.py](./chat_word_frequency.py)   
 
 ### 활용된 문법
 [정규표현식](https://wikidocs.net/4308)
 
+<br>
 ## 워드클라우드
 [WordCloud.py](./chat_worldcloud.py)
 ### wordcloud 패키지 설치하기   
