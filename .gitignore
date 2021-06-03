@@ -2,3 +2,4 @@ venv/
 *.png
 .idea/
 chat_data/*.txt
+chat_data/*.xlsx

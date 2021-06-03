@@ -43,8 +43,10 @@ with open(os.path.join(CHAT_DATA_DIR, "2021.05.20.txt"), "r", encoding="utf-8") 
                 temp += line.count(word)
             wordTable[word].append(temp) #ex)사용자1의 단어1 빈도 추가
 
+df = DataFrame(wordTable, index=names)
+df.to_excel(os.path.join(CHAT_DATA_DIR, 'words_frequency.xlsx'))
 print('='*3, '단어 빈도 분석 결과', '='*3)
-print(DataFrame(wordTable, index=names))
+print(df)
 print('='*7, '총 대화 수', '='*7)
 for i in range(len(names)): #사용자 별로 대화 개수 출력
     number = len(user_linesList[i])
