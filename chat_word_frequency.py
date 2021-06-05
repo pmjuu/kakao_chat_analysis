@@ -5,31 +5,27 @@ from pandas import DataFrame
 BASE_DIR = os.path.dirname(__file__)
 CHAT_DATA_DIR = os.path.join(BASE_DIR, 'chat_data')
 
-# words = ['ㅎ', '사용자', ' : ']
 words = input('공백을 구분자로 빈도를 알고 싶은 단어를 입력해주세요 : ').split()
 wordTable = {key:[] for key in words}
 
-with open(os.path.join(CHAT_DATA_DIR, "2021.05.20.txt"), "r", encoding="utf-8") as f:
+with open(os.path.join(CHAT_DATA_DIR, "test.txt"), "r", encoding="utf-8") as f:
     '''데이터 정제하기'''
     data = f.read()
-    data = re.sub('\d+년 \d+월 \d+일 \D요일\n', '', data)
+    data = re.sub('\d+년 \d+월 \d+일 \D요일\n', '', data) #년월일 문장 제거
     data = data.replace('\n', ' ')
 
     sent_time = re.findall('\d+[.] \d+[.] \d+[.] 오\D \d+:\d+, ', data) #날짜시각 추출
 
     data = [data]
-    for i in sent_time:
+    for i in sent_time: #날짜시각을 기준으로 메세지 분리
         temp = data[-1]
         data.pop()
         data.extend(temp.split(i))
     data = data[1:]
 
-    '''정제된 데이터txt파일'''
+    '''정제된 데이터 txt파일 확인'''
     with open(os.path.join(CHAT_DATA_DIR, "refined_data.txt"), "w", encoding="utf-8") as fw:
         for line in data:
-            fw.write(line+'\n')
-    with open(os.path.join(CHAT_DATA_DIR, "sent_time.txt"), "w", encoding="utf-8") as fw:
-        for line in sent_time:
             fw.write(line+'\n')
 
     names = sorted({line.split(' : ')[0] for line in data}) #사용자 이름 추출
@@ -47,7 +43,7 @@ df = DataFrame(wordTable, index=names)
 df.to_excel(os.path.join(CHAT_DATA_DIR, 'words_frequency.xlsx'))
 print('='*3, '단어 빈도 분석 결과', '='*3)
 print(df)
-print('='*7, '총 대화 수', '='*7)
-for i in range(len(names)): #사용자 별로 대화 개수 출력
+print('='*6, '총 메세지 수', '='*6)
+for i in range(len(names)): #사용자 별로 메세지 개수 출력
     number = len(user_linesList[i])
     print(names[i], ':', number, '개')

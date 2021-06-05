@@ -4,9 +4,10 @@
 
 ## 단어 빈도 구하기
 [단어 빈도 구하기.py](./chat_word_frequency.py)   
+[티스토리 기록](https://pmj9.tistory.com/88?category=872144)
 
 ### 활용된 문법
-[정규표현식](https://wikidocs.net/4308)
+[정규표현식 - wikidocs](https://wikidocs.net/4308)
 
 <br>
 
